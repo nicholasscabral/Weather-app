@@ -14,12 +14,7 @@ body {
     height: 50vh;
     width: 70vw;
 
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%); */
-
-    margin: auto;
+    margin: 15rem auto;
 
     background-color: #FFF;
     border: 0.6rem solid wheat;
@@ -40,18 +35,22 @@ body {
 .app-title p {
     padding: 15px;
     margin: 0 auto;
-    font-size: 1.2em;
+    font-size: 1.8em;
     color: #293251;
 }
 
 .weather-container .temperature-value p{
+    font-size: 30px;
+
     background-color: violet;
-    width: 300px;
-    height: 60px;
 }
 
-
-
+.weather-container .temperature-description p,
+.weather-container .location p {
+    font-size: 20px;
+    margin-top: 10px;
+    background-color: yellow;
+}
 
 .inputs {
     display: flex;
@@ -61,5 +60,11 @@ body {
 
 .inputs input {
     margin-top: 0.5rem;
+}
+
+@media (min-width:700px) {
+    .container {
+        max-width: 500px;
+    }
 }
 
