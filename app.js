@@ -2,13 +2,10 @@ var tempIcon = document.querySelector('.weather-icon')
 var temperature = document.querySelector('.temperature-value')
 var description = document.querySelector('.temperature-description')
 var local = document.querySelector('.location')
-var inputValue = document.querySelector('.inputValue')
+var inputValue = document.querySelector('#inputValue')
 var button = document.querySelector('#button')
 
 button.addEventListener('click', getCityData)
-// function convertTemperature(temp) {
-//     var celcius = temp
-// }
 
 function getCityData() {
     try {
@@ -22,10 +19,10 @@ function getCityData() {
             var country = data['sys']['country']
             var iconValue = data['weather'][0]['icon']
 
-            local.innerHTML = city + ', ' + country
-            temperature.innerHTML = temp
-            description.innerHTML = desc
-            tempIcon.innerHTML = '<img src="icons/'+iconValue+'.png">'
+            local.innerHTML = `<p>${city}, ${country}</p>`
+            temperature.innerHTML = `<p> ${temp} </p>`
+            description.innerHTML = `<p> ${desc} </p>`
+            tempIcon.innerHTML = `<img src="icons/${iconValue}.png">`
 
         })
     } catch (error) {

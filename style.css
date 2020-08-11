@@ -11,45 +11,47 @@ body {
 }
 
 .container {
-    height: 50vh;
+    height: 70%;
     width: 70vw;
 
-    margin: 15rem auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 
-    background-color: #FFF;
+    background-color: #F8F8FC;
     border: 0.6rem solid wheat;
     border-radius: 0.8rem;
-}
 
-.container .weather {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: flex-start;
-
+    
     text-align: center;
-
-    margin-top: 5rem;
 }
+
 
 .app-title p {
     padding: 15px;
-    margin: 0 auto;
+    margin: 20px auto 0;
     font-size: 1.8em;
     color: #293251;
 }
 
 .weather-container .temperature-value p{
-    font-size: 30px;
+    font-size: 40px;
 
-    background-color: violet;
+    background-color: rgb(240, 243, 245);
 }
 
 .weather-container .temperature-description p,
 .weather-container .location p {
     font-size: 20px;
     margin-top: 10px;
-    background-color: yellow;
+    background-color: rgb(240, 243, 245);
+
+    border-radius: 0.8rem;
 }
 
 .inputs {
@@ -59,12 +61,54 @@ body {
 }
 
 .inputs input {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
 }
+
+#inputValue {
+    padding: 5px;
+    font-size: large;
+    font-family: monospace;
+
+    border: 1px solid wheat;
+
+    outline: none;
+}
+
+#button {
+    width: 50%;
+
+    font-size: large;
+    font-weight: bold;
+    font-family: monospace;
+
+    align-self: center;
+    padding: 5px;
+
+    background-color: #008B8B;
+
+    transition: 400ms;
+    outline: none;
+    cursor: pointer;
+}
+
+#button:hover {
+    background-color: green;
+}
+
 
 @media (min-width:700px) {
     .container {
         max-width: 500px;
+    }
+
+    #button {
+        width: 100%;
+    }
+}
+
+@media (min-height:800px) {
+    .container {
+        height: 50%;
     }
 }
 
