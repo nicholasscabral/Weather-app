@@ -109,6 +109,12 @@ body {
     transition: 400ms;
     outline: none;
     cursor: pointer;
+
+    appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
 }
 
 #button:hover {
