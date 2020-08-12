@@ -1,3 +1,9 @@
+:root {
+    --primary-color: wheat;
+    --secondary-color: #293251;
+    --contrast-color: rgb(207, 188, 152);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +13,7 @@
 }
 
 body {
-    background-color: #293251;
+    background-color: var(--secondary-color);
 }
 
 .container {
@@ -19,9 +25,9 @@ body {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 
-    background-color: #F8F8FC;
-    border: 0.6rem solid wheat;
-    border-radius: 0.8rem;
+    background-color: var(--contrast-color);
+    border: 0.6rem solid var(--primary-color);
+    border-radius: 0.4rem;
 
     display: flex;
     flex-direction: column;
@@ -36,22 +42,25 @@ body {
     padding: 15px;
     margin: 20px auto 0;
     font-size: 1.8em;
-    color: #293251;
+    color: var(--secondary-color);
 }
 
 .weather-container .temperature-value p{
     font-size: 40px;
+    border-radius: 0.4rem;
 
-    background-color: rgb(240, 243, 245);
+    background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
 }
 
 .weather-container .temperature-description p,
 .weather-container .location p {
     font-size: 20px;
     margin-top: 10px;
-    background-color: rgb(240, 243, 245);
+    background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
 
-    border-radius: 0.8rem;
+    border-radius: 0.4rem;
 }
 
 .inputs {
@@ -67,9 +76,10 @@ body {
 #inputValue {
     padding: 5px;
     font-size: large;
-    font-family: monospace;
 
-    border: 1px solid wheat;
+    background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 0.4rem;
 
     outline: none;
 }
@@ -84,7 +94,11 @@ body {
     align-self: center;
     padding: 5px;
 
-    background-color: #008B8B;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+
+    border: 1px solid var(--secondary-color);
+    border-radius: 0.4rem;
 
     transition: 400ms;
     outline: none;
@@ -92,7 +106,7 @@ body {
 }
 
 #button:hover {
-    background-color: green;
+    background-color: var(--primary-color);
 }
 
 
