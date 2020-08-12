@@ -7,6 +7,11 @@ var button = document.querySelector('#button')
 
 button.addEventListener('click', getCityData)
 
+function convertTemperature(temperature) {
+    let celsius = Math.floor(temperature - 273)
+    return celsius + '°C'
+}
+
 function getCityData() {
     try {
         fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=18154398977a537bd278e8d87bb29dc9')
@@ -20,7 +25,7 @@ function getCityData() {
             var iconValue = data['weather'][0]['icon']
 
             local.innerHTML = `<p>${city}, ${country}</p>`
-            temperature.innerHTML = `<p> ${temp} </p>`
+            temperature.innerHTML = `<p> ${convertTemperature(temp)}</p>`
             description.innerHTML = `<p> ${desc} </p>`
             tempIcon.innerHTML = `<img src="icons/${iconValue}.png">`
 
