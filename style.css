@@ -20,16 +20,18 @@
 
 body {
     background-color: var(--secondary-color);
+
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
     height: 80%;
     width: 70vw;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    margin: 20px 0 20px;
 
     background-color: var(--contrast-color);
     border: 0.6rem solid var(--primary-color);
@@ -109,6 +111,8 @@ body {
     transition: 400ms;
     outline: none;
     cursor: pointer;
+
+    margin-bottom: 50px;
 
     appearance: none;
 	-webkit-appearance: none;
