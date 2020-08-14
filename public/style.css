@@ -75,6 +75,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    margin-bottom: 50px;
 }
 
 .inputs input {
@@ -90,6 +92,14 @@ body {
     border-radius: 0.4rem;
 
     outline: none;
+}
+
+.inputs p {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-family: monospace;
+
+    cursor: pointer;
 }
 
 #button {
@@ -112,7 +122,7 @@ body {
     outline: none;
     cursor: pointer;
 
-    margin-bottom: 50px;
+    margin-bottom: 16px;
 
     appearance: none;
 	-webkit-appearance: none;
