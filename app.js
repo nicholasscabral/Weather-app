@@ -7,6 +7,7 @@ var inputValue = document.querySelector("#inputValue");
 var button = document.querySelector("#button");
 var UsersLocation = document.querySelector('.usersLocation')
 
+window.addEventListener("keypress", check)
 UsersLocation.addEventListener("click", getCurrentLocation)
 button.addEventListener("click", getCityData);
 
@@ -17,7 +18,7 @@ function convertTemperature(temperature) {
 
 function getCityData() {
     try {
-        fetch("https://api.openweathermap.org/data/2.5/weather?q="+inputValue.value+"&appid=18154398977a537bd278e8d87bb29dc9&lang=pt_br")
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue.value}&appid=18154398977a537bd278e8d87bb29dc9&lang=pt_br`)
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
@@ -75,5 +76,11 @@ function setPosition(position) {
 function showError(error) {
     if(error) {
         notification.innerHTML = `<p> ${error.message} </p>`
+    }
+}
+
+function check(event) {
+    if(event.code == "Enter") {
+        getCityData()
     }
 }
