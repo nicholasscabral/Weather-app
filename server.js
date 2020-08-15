@@ -8,6 +8,5 @@ server.use(express.static('public'))
 })
 
 .listen(7000, () => {
-    console.log('servidor iniciado/reiniciado')
+    console.log('servidor iniciado/reiniciado...')
 })
-

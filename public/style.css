@@ -53,6 +53,14 @@ body {
     color: var(--secondary-color);
 }
 
+.notification p {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 0.4rem;
+}
+
 .weather-container .temperature-value p{
     font-size: 40px;
     border-radius: 0.4rem;
