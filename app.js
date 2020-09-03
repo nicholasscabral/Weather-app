@@ -6,10 +6,13 @@ var local = document.querySelector(".location");
 var inputValue = document.querySelector("#inputValue");
 var button = document.querySelector("#button");
 var UsersLocation = document.querySelector('.usersLocation')
+var control = false // Control the convertTempUnit function usage
+var flag = true // Switch temp unit
 
 window.addEventListener("keypress", check)
 UsersLocation.addEventListener("click", getCurrentLocation)
 button.addEventListener("click", getCityData);
+temperature.addEventListener("click", convertTempUnit)
 
 function convertTemperature(temperature) {
   let celsius = Math.floor(temperature - 273);
@@ -27,6 +30,7 @@ function getCityData() {
             var desc = data["weather"][0]["description"];
             var country = data["sys"]["country"];
             var iconValue = data["weather"][0]["icon"];
+            control = true
 
             local.innerHTML = `<p>${city}, ${country}</p>`;
             temperature.innerHTML = `<p> ${convertTemperature(temp)}</p>`;
@@ -53,7 +57,7 @@ function setPosition(position) {
     let longitude = position.coords.longitude
 
     try {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=18154398977a537bd278e8d87bb29dc9`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=18154398977a537bd278e8d87bb29dc9&lang=pt_br`)
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
@@ -62,6 +66,7 @@ function setPosition(position) {
             var desc = data['weather'][0]['description']
             var country = data['sys']['country']
             var iconValue = data['weather'][0]['icon']
+            control = true
 
             local.innerHTML = `<p>${city}, ${country}</p.>`;
             temperature.innerHTML = `<p> ${convertTemperature(temp)}</p>`;
@@ -82,5 +87,22 @@ function showError(error) {
 function check(event) {
     if(event.code == "Enter") {
         getCityData()
+    }
+}
+
+function convertTempUnit() {
+    if (control) {
+        let tempString = temperature.childNodes[0].textContent
+        let tempValue = parseInt(tempString)
+        if(flag) {
+            flag = false
+            let fahrenheit = Math.round((tempValue * (9/5) + 32))
+            temperature.innerHTML = `<p> ${fahrenheit}°F </p>`
+        }
+        else {
+            flag = true
+            let celsius = Math.round((tempValue - 32) * (5/9))
+            temperature.innerHTML = `<p> ${celsius}°C </p>`
+        }
     }
 }

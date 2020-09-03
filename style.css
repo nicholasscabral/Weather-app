@@ -67,6 +67,8 @@ body {
 
     background-color: var(--primary-color);
     border: 1px solid var(--secondary-color);
+
+    cursor: pointer;
 }
 
 .weather-container .temperature-description p,
